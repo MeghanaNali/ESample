@@ -1,0 +1,227 @@
+<html>
+    <script type="text/javascript">
+        var RE=/^.+@.+\..{3}$/;
+        var RE1=/^[A-Z][a-z]+$/;
+        var RE2=/^[6-9][0-9]+$/;
+        function validateForm()
+        {
+            if(document.f1.fname.value=="")
+            {
+                window.alert("First name should not be empty!");
+                document.f1.fname.focus();
+                return false;
+            }
+            else if(RE1.test(document.f1.fname.value)==false)
+            {
+                window.alert("Invalid Format..");
+                return false;
+            }
+            else if(document.f1.fname.value.length<4)
+            {
+                window.alert("First name should have atleast 4 characters");
+                document.f1.fname.focus();
+                return false;               
+            }
+            else if(document.f1.lname.value=="")
+            {
+                window.alert("Last name should not be empty!");
+                document.f1.lname.focus();
+                return false;
+            }
+            else if(RE1.test(document.f1.lname.value)==false)
+            {
+                window.alert("Invalid Format1..");
+                return false;
+            }
+            else if(document.f1.lname.value.length<6)
+            {
+                window.alert("Last name should have atleast 6 characters");
+                document.f1.lname.focus();
+                return false;               
+            }
+            else if(document.f1.pwd.value=="")
+            {
+                window.alert("Password should not be empty!");
+                document.f1.pwd.focus();
+                return false;
+            }
+            else if(document.f1.pwd.value.length<6)
+            {
+                window.alert("Password should have atleast 6 characters");
+                document.f1.pwd.focus();
+                return false;               
+            }
+            else if((document.f1.cpwd.value)!=(document.f1.pwd.value))
+            {
+                window.alert("Confirm password and password should be same!");
+                return false;
+            }
+            else if(document.f1.eid.value==""||document.f1.eid.value==null)
+            {
+                window.alert("Email id should be empty!");
+                document.f1.eid.focus();
+                return false;               
+            }
+            else if(RE.test(document.f1.eid.value)==false)
+            {
+                window.alert("Invalid Format!");
+                return false;
+            }
+            else if(document.f1.phno.value.length<10||document.f1.phno.value.length>10)
+            {
+                window.alert("Phone number should have only 10 digits");
+                document.f1.phno.focus();
+                return false;
+            }
+            else if(RE2.test(document.f1.phno.value)==false)
+            {
+                window.alert("Phone number should be in digits!");
+                return false;
+            }
+            else if(document.f1.gender[0].checked==false&&document.f1.gender[1].checked==false)
+            {
+                window.alert("Please select gender!");
+                document.f1.gender[0].focus();
+                document.f1.gender[1].focus();
+                return false;
+            }
+            else if(document.f1.DLB1.selectedIndex==0)
+            {
+                window.alert("Please enter date");
+                document.f1.DLB1.focus();
+                return false;
+            }
+            else if(document.f1.DLB2.selectedIndex==0)
+            {
+                window.alert("Please enter month");
+                document.f1.DLB2.focus();
+                return false;
+            }
+            else if(document.f1.DLB3.selectedIndex==0)
+            {
+                window.alert("Please enter year");
+                document.f1.DLB3.focus();
+                return false;
+            }
+            else if(document.f1.LB[0].checked==false&&document.f1.LB[1].checked==false&&document.f1.LB[2].checked==false&&document.f1.LB[3].checked==false)
+            {
+                window.alert("Please select Language!");
+                document.f1.LB[0].focus();
+                document.f1.LB[1].focus();
+                document.f1.LB[2].focus();
+                document.f1.LB[3].focus();
+                return false;
+            }
+            else if(document.f1.addr.value=="")
+            {
+                window.alert("Address should be empty!");
+                document.f1.addr.focus();
+                return false;
+            }
+            else
+            {
+                window.alert("Ur entire given input is valid!");
+                return true;
+            }
+        }
+    </script>
+    <body bgcolor="lightcyan" text="red">
+        <form name="f1" onsubmit="return validateForm()" action="LOGIN.html" method="post">
+            <table border="3" bordercolor="blue" align="center">
+                <caption><h1>WELCOME TO REGISTRATION PAGE</h1></caption>
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="fname"></td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td><input type="text" name="lname"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="pwd"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td><input type="password" name="cpwd"></td>
+                </tr>
+                <TR>
+                    <TD>Email Id</TD>
+                    <TD><INPUT TYPE="text" NAME="eid"/></TD>
+                </TR>
+                <TR>
+                    <TD>Phone Number</TD>
+                    <TD><INPUT TYPE="text" NAME="phno"/></TD>
+                </TR>
+                <tr>
+                    <td>GENDER</td>
+                    <td>
+                        <input type="radio" name="gender">Male
+                        <input type="radio" name="gender">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date of Birth</td>
+                    <td>Day<select name="DLB1">
+                        <option>choose
+                        <option>1
+                        <option>2
+                        <option>3
+                        <option>4
+                        <option>5
+                        <option>6
+                        <option>7
+                        <option>8
+                    </select>
+                    Month<select name="DLB2">
+                        <option>choose
+                        <option>1
+                        <option>2
+                            <option>3
+                                <option>4
+                                    <option>5
+                                    <option>6
+                                <option>7
+                            <option>8
+                    </select>
+                Year<select name="DLB3">
+                    <option>choose
+                        <option>01
+                            <option>02
+                                <option>03
+                                    <option>04
+                                    <option>05
+                                <option>06
+                            <option>07
+                        <option>08
+                    <option>09
+                        <option>10
+                </select></td>
+                </tr>
+                <tr>
+                    <td>Language known</td>
+                    <td>
+                        <input type="checkbox" name="LB0">English
+                        <input type="checkbox" name="LB1">Hindi
+                        <input type="checkbox" name="LB2">Telugu
+                        <input type="checkbox" name="LB3">Tamil
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <textarea rows="6" cols="20" name="addr"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="submit">
+                    </td>
+                    <td>
+                        <input type="reset" value="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
